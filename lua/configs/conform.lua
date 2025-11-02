@@ -1,15 +1,26 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    javascript = { "oxlint", "prettier" },
+    typescript = { "oxlint", "prettier" },
+    javascriptreact = { "oxlint", "prettier" },
+    typescriptreact = { "oxlint", "prettier" },
+    go = { "oxlint", "prettier" },
+    templ = { "prettier" },
+    json = { "prettier" },
+    html = { "prettier" },
+    css = { "prettier" },
+    scss = { "prettier" },
+    yaml = { "prettier" },
+    markdown = { "prettier" },
   },
-
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
+  format_on_save = {
+    timeout_ms = 2000,
+    lsp_format = "fallback",
+  },
+  default_format_opts = {
+    lsp_format = "fallback",
+  },
 }
 
 return options
