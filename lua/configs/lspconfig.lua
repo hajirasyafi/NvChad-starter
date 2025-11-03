@@ -44,6 +44,30 @@ local servers = {
       "typescript", "typescriptreact", "typescript.tsx",
     },
     root_markers = { "package.json", "tsconfig.json", ".git" },
+    settings = {
+      typescript = {
+        preferences = {
+          importModuleSpecifier = "relative",
+          importModuleSpecifierPreference = "relative",
+          importModuleSpecifierEnding = "minimal",
+          preferTypeOnlyAutoImports = true,
+          includeCompletionsForModuleExports = true,
+          includeCompletionsWithInsertTextCompletions = true,
+        },
+        suggest = {
+          autoImports = true,
+        },
+      },
+      javascript = {
+        preferences = {
+          importModuleSpecifier = "relative",
+          importModuleSpecifierPreference = "relative",
+          importModuleSpecifierEnding = "minimal",
+          preferTypeOnlyAutoImports = true,
+        },
+        suggest = { autoImports = true },
+      },
+    }
   },
 
   pyright = {

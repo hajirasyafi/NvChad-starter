@@ -4,11 +4,24 @@ return {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
-      log = {
-        enable = true,
-        ignore_dirs = { "node_modules", "dist" },
-        truncate = true,
-        types = { git = true, profile = true, watcher = true },
+    },
+    filesystem_watchers = {
+      ignore_dirs = {
+        "node_modules",
+      },
+    },
+    log = {
+      enable = true,
+      truncate = true,
+      types = {
+        all = false,
+        config = false,
+        copy_paste = false,
+        dev = false,
+        diagnostics = true,
+        git = true,
+        profile = true,
+        watcher = true,
       },
     },
   },
@@ -160,6 +173,14 @@ return {
     opts_extend = { "sources.default" },
   },
   {
+    "mason-org/mason.nvim",
+    opts = {
+      ui = {
+        border = "solid"
+      }
+    }
+  },
+  {
     "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
@@ -185,4 +206,5 @@ return {
       { "mason-org/mason.nvim" },
     },
   },
+  { 'nvim-mini/mini.nvim', version = false },
 }
